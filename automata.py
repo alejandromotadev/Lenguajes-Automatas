@@ -11,6 +11,7 @@ for i in range(num_states):
     statesDb.append(state)
     
 dfa = DFA(
+    input_symbols=alfabet+simbolos,
     states = set(statesDb),
     transitions = {
         'q0': {'D': 'q1'},
