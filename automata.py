@@ -39,4 +39,3 @@ dfa2 = VisualDFA(dfa)
 
 print(dfa2.table)
 
-#pip install automata-lib pandas graphviz colormath jupyterlab visual-automata
