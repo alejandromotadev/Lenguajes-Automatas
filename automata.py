@@ -1,9 +1,10 @@
-from dfa  import DFA
+from automata.fa.dfa import DFA
 
 num_states = 15
 statesDb = []
 alfabet = ['D','E','B','U','G','T','r','u','e','F','a','l','s']
 simbolos = [chr(32),chr(61)] #{' ', =}
+
 
 for i in range(num_states):
     state = 'q'+str(i)
