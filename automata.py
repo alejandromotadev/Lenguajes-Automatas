@@ -1,4 +1,5 @@
 from automata.fa.dfa import DFA
+from visual_automata.fa.dfa import VisualDFA
 
 num_states = 15
 statesDb = []
@@ -11,8 +12,8 @@ for i in range(num_states):
     statesDb.append(state)
     
 dfa = DFA(
-    input_symbols=alfabet+simbolos,
     states = set(statesDb),
+    input_symbols=alfabet+simbolos,
     transitions = {
         'q0': {'D': 'q1'},
         'q1': {'E': 'q2'},
@@ -29,8 +30,13 @@ dfa = DFA(
         'q12': {'s': 'q13'},
         'q13': {'e': 'q14'}   
     },
-    start  = 'q0',
-    end  = 'q14',
+    initial_state='q0',
+    final_states={'q14'},
     allow_partial = True
 )  
 
+dfa2 = VisualDFA(dfa)
+
+print(dfa2.table)
+
+#pip install automata-lib pandas graphviz colormath jupyterlab visual-automata
