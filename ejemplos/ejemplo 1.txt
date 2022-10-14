@@ -6,6 +6,10 @@ USE_TZ = False
 
 SECRET_KEY = "".join(random.sample(string.printable, 20))
 
+DEBUG = True
+
+ALLOWED_HOSTS = []
+
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.sqlite3",
@@ -16,6 +20,8 @@ DATABASES = {
 INSTALLED_APPS = [
     "django_markup",
 ]
+
+LANGUAGE_CODE = "en-us"
 
 TEMPLATES = [
     {
@@ -33,3 +39,8 @@ TEMPLATES = [
         },
     },
 ]
+STATIC_URL = "/static/"
+MEDIA_URL= '/media/'
+MEDIA_ROOT= os.path.join(BASE_DIR, 'media')
+STATIC_ROOT= os.path.join(BASE_DIR, 'static')
+
