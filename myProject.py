@@ -6,9 +6,9 @@ import langDfa as dfaLanguage
 from databasesDfa import declaracionDFA as dfaDB
 from installedAppsDfa import declaracionDFA as dfaIA
    
-def leerDebug():
+def leerDebug(ruta):
     print('debuig leer')
-    with open('./ejemplos/ejemplo 1.txt', 'r') as infile:
+    with open(ruta, 'r') as infile:
             data = infile.readline()
             print(data.strip())
             while data:     
@@ -21,10 +21,10 @@ def leerDebug():
                 data=infile.readline()
             print(data)
             
-def leerInstalledApps():   
+def leerInstalledApps(ruta):   
     print('installed apps leer')
     installedApps = ""
-    with open('./ejemplos/ejemplo 1.txt', 'r') as infile:
+    with open(ruta, 'r') as infile:
             data = infile.readlines()
             for element in data:
                 data[data.index(element)] = element.rstrip() #limpia las lineas
@@ -38,22 +38,10 @@ def leerInstalledApps():
                 dfaDB().read_input(installedApps)
             for linea in data[data.index('INSTALLED_APPS = ['):data.index(']')+1]: #concatena en una linea
                 print(linea)
-    # with open('./ejemplos/ejemplo 1.txt', 'r') as infile:
-    #         data = infile.readline()
-    #         print(data.strip())
-    #         while data:     
-    #             if dfaIAPPS.dfaIA.accepts_input(data.rstrip()):
-    #                 print('aceptado\t')
-    #                 # print(data.rstrip())
-    #                 break
-    #             else:
-    #                 print('rechazado')
-    #             data=infile.readline()
-    #         print(data)
             
-def leerAh():
+def leerAh(ruta):
     print('allowes hosts leer')
-    with open('./ejemplos/ejemplo 1.txt', 'r') as infile:
+    with open(ruta, 'r') as infile:
             data = infile.readline()
             print(data.strip())
             while data:     
@@ -67,9 +55,9 @@ def leerAh():
                 data=infile.readline()
             print(data)
             
-def leerUrl():
+def leerUrl(ruta):
     ('url variables leer')
-    with open('./ejemplos/ejemplo 1.txt', 'r') as infile:
+    with open(ruta, 'r') as infile:
             data = infile.readline()
             print(data.strip())
             while data:     
@@ -81,9 +69,9 @@ def leerUrl():
                 data=infile.readline()
             print(data)
             
-def leerLang():
+def leerLang(ruta):
     print('language leer')
-    with open('./ejemplos/ejemplo 1.txt', 'r') as infile:
+    with open(ruta, 'r') as infile:
             data = infile.readline()
             while data:     
                 if dfaLanguage.dfaLg.accepts_input(data.strip()):
@@ -95,10 +83,10 @@ def leerLang():
                 data=infile.readline()
             print(data)
             
-def leerDatabase():
+def leerDatabase(ruta):
     print('Base de datos leer')
     databases = ""
-    with open('./ejemplos/ejemplo 1.txt', 'r') as infile:
+    with open(ruta, 'r') as infile:
             data = infile.readlines()
             for element in data:
                 data[data.index(element)] = element.rstrip() #limpia las lineas
