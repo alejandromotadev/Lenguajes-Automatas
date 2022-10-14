@@ -263,6 +263,84 @@ def languageCod():
     )  
     dfa2 = VisualDFA(dfa)
     print(dfa2.table)
+def dataBases():
+    num_states = 72
+    statesaH = []
+    alphabet = []
+    low_alphabet = []
+    symbols = [chr(32),chr(33),chr(34),chr(35),chr(36),chr(37),chr(38),chr(39),chr(40),chr(41),chr(42),chr(43),chr(44),chr(45),chr(46),chr(47),chr(48),chr(49),chr(50),chr(51),chr(52),chr(53),chr(54),chr(55),chr(56),chr(57),chr(58),chr(59),chr(60),chr(61),chr(62),chr(63),chr(64),chr(91),chr(92),chr(93),chr(94),chr(95),chr(96),chr(123),chr(124), chr(125), chr(126)] #todos los simbolos
+    def createDict(list,value): 
+        myDict = dict()
+        for c in list:
+            myDict[c] = value
+        return myDict 
+        
+    for i in range(num_states):
+        state = 'q'+str(i)
+        statesaH.append(state)
+        
+    for c in string.ascii_letters:  
+        alphabet.append(c)
+    for c in string.string.ascii_lowercase:
+        low_alphabet.append(c)
+    dfa = DFA(
+        states = set(statesaH),
+        input_symbols=alphabet+symbols,
+        transitions = {
+            'q0': {'D': 'q1'},
+            'q1': {'A': 'q2'},
+            'q2': {'T': 'q3'},
+            'q3': {'A': 'q4'},
+            'q4': {'B': 'q5'},
+            'q5': {'A': 'q6'},
+            'q6': {'S': 'q12'},
+            'q7': {'E': 'q8'},
+            'q8': {'S': 'q9'},
+            'q9': {' ': 'q9', '=': 'q10'},
+            'q10': {' ': 'q10', '{': 'q11'},
+            'q11': {'"': 'q12', "'": 'q12'},
+            'q12': {'d': 'q13'},
+            'q13': {'e': 'q14'},
+            'q14': {'f': 'q15'},
+            'q15': {'a': 'q16'},
+            'q16': {'u': 'q17'},
+            'q17': {'l': 'q18'},
+            'q18': {'t': 'q19'},
+            'q19': {'"': 'q20', "'": 'q20'},
+            'q20': {':': 'q21', ' ': 'q20'},
+            'q21': {' ': 'q21', '{': 'q22'},
+            'q22': {' ': 'q22', '"': 'q23', "'": 'q23'},  
+            'q23': {'E': 'q24', 'N': 'q33', 'U': 'q39', 'P': 'q45', 'H': 'q60'},  
+            'q24': {'N': 'q25'},  
+            'q25': {'G': 'q26'},  
+            'q26': {'I': 'q27'},  
+            'q27': {'N': 'q28'},  
+            'q28': {'E': 'q29'},     
+            'q29': {' ': 'q29', ':': 'q30'},  
+            'q30': {' ': 'q30', '"': 'q31', "'": 'q31'},  
+            'q31': dict({'.': 'q31', '"': 'q32', "'": 'q32'},**createDict(low_alphabet, 'q31')),   
+            'q32': {'}': 'q70'},  
+            'q33': {'A': 'q34'},  
+            'q34': {'M': 'q35'},  
+            'q35': {'E': 'q36'},  
+            'q36': {':': 'q37', ' ': 'q36'},  
+            'q37': {'"': 'q38',"'": 'q38', ' ': 'q37'},  
+            'q38': dict({'"': 'q32', "'": 'q32'},**createDict(alphabet, 'q38')),  
+            'q39': {',': 'q40'},  
+            'q40': {' ': 'q40', '"': 'q41', "'": 'q41'},  
+            'q41': dict({'/': 'q41', '"': 'q42', "'": 'q42'},**createDict(alphabet,'q41')),  
+            'q42': {')': 'q46'},  
+            'q43': {' ': 'q43'},  
+            'q44': {' ': 'q44'},  
+            'q45': dict({'/': 'q45', '"': 'q46', "'": 'q46'},**createDict(alphabet,'q45')),  
+            'q46': {},
+        },
+        initial_state='q0',
+        final_states={'q71'},
+        allow_partial=True, 
+    )
+    dfa2 = VisualDFA(dfa)
+    print(dfa2.table) 
 def main():
     debugDfa()
     installedAppsDfa()  
