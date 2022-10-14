@@ -14,11 +14,16 @@ DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.sqlite3",
         "NAME": "dev.db",
+        "USER": "user001",
+        "PASSWORD": "123456789",
+        "HOST": "localhost",
+        "PORT": "5432"
     },
 }
 
 INSTALLED_APPS = [
     "django_markup",
+    "django.contrib.messagesToLoad"
 ]
 
 LANGUAGE_CODE = "en-us"
@@ -39,8 +44,8 @@ TEMPLATES = [
         },
     },
 ]
+
 STATIC_URL = "/static/"
 MEDIA_URL= '/media/'
 MEDIA_ROOT= os.path.join(BASE_DIR, 'media')
 STATIC_ROOT= os.path.join(BASE_DIR, 'static')
-
