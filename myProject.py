@@ -1,4 +1,3 @@
-from automata.fa.dfa import DFA
 import debugDfa as dfaDebug
 import installedAppsDfa as dfaIAPPS
 import allowedH as dfaAH
