@@ -8,18 +8,19 @@ from installedAppsDfa import declaracionDFA as dfaIA
    
 def leerDebug(ruta):
     print('debuig leer')
+    debug = ''
     with open(ruta, 'r') as infile:
             data = infile.readline()
             print(data.strip())
             while data:     
                 if dfaDebug.dfaDbg.accepts_input(data.strip()):
                     print('aceptado\t')
-                    print(data.strip())
+                    debug += data.strip()
                     break
                 else:
                     print('rechazado')
                 data=infile.readline()
-            print(data)
+            return debug
             
 def leerInstalledApps(ruta):   
     print('installed apps leer')
@@ -38,50 +39,54 @@ def leerInstalledApps(ruta):
                 dfaDB().read_input(installedApps)
             for linea in data[data.index('INSTALLED_APPS = ['):data.index(']')+1]: #concatena en una linea
                 print(linea)
+            return installedApps
             
 def leerAh(ruta):
     print('allowes hosts leer')
+    allow_host = ''
     with open(ruta, 'r') as infile:
             data = infile.readline()
             print(data.strip())
             while data:     
                 if dfaAH.dfaAh.accepts_input(data.strip()):
                     print('aceptado\t')
-                    print(data.strip())
+                    allow_host+=data.strip()
                     break
                 else:
                     print('rechazado')
                     
                 data=infile.readline()
-            print(data)
+            return allow_host
             
 def leerUrl(ruta):
     ('url variables leer')
+    url_variables = ''
     with open(ruta, 'r') as infile:
             data = infile.readline()
             print(data.strip())
             while data:     
                 if dfaUrl.dfaURL.accepts_input(data.strip()):
                     print('aceptado\t')
-                    print(data.strip())
+                    url_variables+=data.strip()
                 else:
                    print('rechazado')
                 data=infile.readline()
-            print(data)
+            return url_variables
             
 def leerLang(ruta):
     print('language leer')
+    lenguage_code = ''
     with open(ruta, 'r') as infile:
             data = infile.readline()
             while data:     
                 if dfaLanguage.dfaLg.accepts_input(data.strip()):
                     print('aceptado\t')
-                    print(data.strip())
+                    lenguage_code=+data.strip()
                     break
                 else:
                     print('rechazado')
                 data=infile.readline()
-            print(data)
+            return lenguage_code
             
 def leerDatabase(ruta):
     print('Base de datos leer')
@@ -100,6 +105,7 @@ def leerDatabase(ruta):
                 dfaDB().read_input(databases)
             for linea in data[data.index('DATABASES = {'):data.index('}')+1]: #concatena en una linea
                 print(linea)
+            return databases
         
 def main():
     leerDebug()
