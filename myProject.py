@@ -78,11 +78,11 @@ def leerDatabase():
         
 def main():
     leerDebug()
-    #leerInstalledApps()
+    leerInstalledApps()
     leerAh()
     leerUrl()
     leerLang()
-    #leerDatabase()
+    leerDatabase()
 if __name__ == "__main__":
     main()
     

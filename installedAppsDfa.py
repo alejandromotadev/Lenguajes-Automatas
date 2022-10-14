@@ -44,6 +44,6 @@ dfaIA = DFA(
         
     },
     initial_state='q0',
-    final_states={'q19', 'q16'},
+    final_states={'q19'},
     allow_partial=True, 
 )
