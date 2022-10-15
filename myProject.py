@@ -11,14 +11,13 @@ def leerDebug(ruta):
     debug = ''
     with open(ruta, 'r') as infile:
             data = infile.readline()
-            print(data.strip())
             while data:     
                 if dfaDebug.dfaDbg.accepts_input(data.strip()):
                     print('aceptado\t')
                     debug += data.strip()
                     break
                 else:
-                    print('rechazado')
+                    pass
                 data=infile.readline()
             return debug
             
@@ -34,8 +33,6 @@ def leerInstalledApps(ruta):
             if dfaIA().accepts_input(installedApps):
                 print('aceptado\t') 
             else:
-                print('rechazado')
-                print(installedApps)
                 dfaDB().read_input(installedApps)
             for linea in data[data.index('INSTALLED_APPS = ['):data.index(']')+1]: #concatena en una linea
                 print(linea)
@@ -53,8 +50,7 @@ def leerAh(ruta):
                     allow_host+=data.strip()
                     break
                 else:
-                    print('rechazado')
-                    
+                    pass
                 data=infile.readline()
             return allow_host
             
@@ -69,7 +65,7 @@ def leerUrl(ruta):
                     print('aceptado\t')
                     url_variables+=data.strip()
                 else:
-                   print('rechazado')
+                   pass
                 data=infile.readline()
             return url_variables
             
@@ -81,10 +77,10 @@ def leerLang(ruta):
             while data:     
                 if dfaLanguage.dfaLg.accepts_input(data.strip()):
                     print('aceptado\t')
-                    lenguage_code=+data.strip()
+                    lenguage_code += data.strip()
                     break
                 else:
-                    print('rechazado')
+                    pass
                 data=infile.readline()
             return lenguage_code
             
@@ -100,8 +96,6 @@ def leerDatabase(ruta):
             if dfaDB().accepts_input(databases):
                 print('aceptado\t') 
             else:
-                print('rechazado')
-                print(databases)
                 dfaDB().read_input(databases)
             for linea in data[data.index('DATABASES = {'):data.index('}')+1]: #concatena en una linea
                 print(linea)

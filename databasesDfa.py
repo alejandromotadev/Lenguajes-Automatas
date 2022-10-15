@@ -66,7 +66,7 @@ def declaracionDFA():
             'q35': {'E': 'q36'},  
             'q36': {'"': 'q74', "'": 'q74',' ': 'q36'},  
             'q37': {'"': 'q38',"'": 'q38', ' ': 'q37'},  
-            'q38': dict({'"': 'q32', "'": 'q32','.': 'q38','_':'q38'},**createDict(alphabet, 'q38')),  
+            'q38': dict({'"': 'q32', "'": 'q32'},**createDict(symbols[2:len(symbols)+1]+alphabet, 'q38')),  
             'q39': {'S': 'q40'},  
             'q40': {'E': 'q41'},  
             'q41': {'R': 'q42'}, 
