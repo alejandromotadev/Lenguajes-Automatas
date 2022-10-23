@@ -1,24 +1,27 @@
 -------------------------------------------------------LA CONSTRUCCION DEL PROYECTO--------------------------------------------------------------
 DJANGO SETTINGS : 
 INSTALLED_APPS = [
-    'django_markup',
-    'django.contrib.messagesToLoad'
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'django.contrib.gis',
+    'shops'
 ]
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'devdb',
+        'ENGINE': 'django.contrib.gis.db.backends.postgis',
+        'NAME': 'gis',
         'USER': 'user001',
         'PASSWORD': '123456789',
-        'HOST': 'localhost',
-        'PORT': '5432',
-    },
+        'HOST': 'meme.me',
+        'PORT': '5432'
+    }
 }
 DEBUG = True
 ALLOWED_HOSTS = []
 LANGUAGE_CODE = 'en-us'
 STATIC_URL = '/static/'
-STATIC_ROOT= os.path.join(BASE_DIR, 'static')
-MEDIA_URL= '/media/'
-MEDIA_ROOT= os.path.join(BASE_DIR, 'media')
 
