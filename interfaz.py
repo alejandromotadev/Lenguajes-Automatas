@@ -4,8 +4,8 @@ from tkinter import *
 import os
 
 window = Tk()
-window.title("Construccion del Django")
-window.geometry('200x200')
+window.title("Construccion del Django :D")
+window.geometry('400x200')
 ruta_str = "Ruta: "
 
 
@@ -21,7 +21,7 @@ def abrir_archivo():
     else:
         with open('./reportes/'+name+'.txt', 'w') as file:
             file.write('-------------------------------------------------------LA CONSTRUCCION DEL PROYECTO--------------------------------------------------------------\n')
-            file.write(f'DJANGO SETTINGS: {fileDFA}\n')
+            file.write(f'DJANGO SETTINGS : \n{fileDFA}\n')
 
 
 button = Button(text='Abrir', command=abrir_archivo)
