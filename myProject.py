@@ -14,13 +14,11 @@ def leerAutomota(ruta):
             declaracionDFA().read_input(dfa)
         for element in data:
             data[data.index(element)] = element.rstrip()  # limpia las lineas
-        # concatena en una linea
-        
+
         for linea in data[data.index('INSTALLED_APPS = ['):data.index(']')+1]:
             dfa += linea
             dfa += '\n'
-         # concatena en una linea
-        
+                
         for linea in data[data.index('DATABASES = {'):data.index('}')+1]:
             dfa += linea
             dfa += '\n'
