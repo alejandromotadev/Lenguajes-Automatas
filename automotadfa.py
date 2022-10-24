@@ -1,6 +1,5 @@
 from automata.fa.dfa import DFA
 import string
-from visual_automata.fa.dfa import VisualDFA
 
 num_states = 201
 statesaH = []
@@ -229,7 +228,7 @@ def declaracionDFA():
     )
     return dfaA
 
-def example(data):
+def example(value):
     dfa = declaracionDFA()
-    return dfa.read_input_stepwise(data)
+    return dfa.read_input_stepwise(value)
 
