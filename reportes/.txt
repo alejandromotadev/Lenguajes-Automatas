@@ -1,3 +1,34 @@
 -------------------------------------------------------LA CONSTRUCCION DEL PROYECTO--------------------------------------------------------------
 DJANGO SETTINGS : 
-Terminado
+ MODULOS Y COMPONENTES: 
+INSTALLED_APPS = [    'django.contrib.admin'
+    'django.contrib.auth'
+    'django.contrib.contenttypes'
+    'django.contrib.sessions'
+    'django.contrib.messages'
+    'django.contrib.staticfiles'
+    'core'
+    'rest_framework'
+    'channels']
+
+DATABASES: 
+DATABASES = {    'default': {        'ENGINE': 'django.db.backends.mysql'
+        'NAME': 'chat'
+        'USER': 'root'
+        'PASSWORD': 'root'    }
+}
+
+ALLOWED_HOSTS: 
+ALLOWED_HOSTS = ['*']
+
+DEBUG: 
+DEBUG = True
+
+URL STATIC: 
+STATIC_ROOT = os.path.join(BASE_DIR,'static_root')STATIC_URL = '/static/'
+
+URL_MEDIA: 
+MEDIA_ROOT = os.path.join(BASE_DIR,'media_root')MEDIA_URL = '/media/'
+
+LANGUAGE CODE: 
+LANGUAGE_CODE = 'en-us'

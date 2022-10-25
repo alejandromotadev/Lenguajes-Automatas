@@ -87,7 +87,7 @@ def leerAutomota(ruta):
             print('rechazado url variable media')
             example(dfaMED)
             declaracionDFA().read_input(dfaMED)
-        return "Terminado"
+        return dfaINS, dfaDATA, dfaALLW, dfaDEBG, dfaSTC, dfaMED, dfaLANG
         
 def main():
     leerAutomota()
