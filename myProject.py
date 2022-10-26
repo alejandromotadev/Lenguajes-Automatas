@@ -37,56 +37,42 @@ def leerAutomota(ruta):
             print('aceptado installed apps\t')
             
         else:
-            print('rechazado installed apps')
-            example(dfaINS)
-            declaracionDFA().read_input(dfaINS)  
+            print('rechazado installed apps') 
         
         if declaracionDFA().accepts_input(dfaDATA):
             print('aceptado databases\t')
             
         else:
             print('rechazado databases')
-            example(dfaDATA)
-            declaracionDFA().read_input(dfaDATA)
             
         if declaracionDFA().accepts_input(dfaDEBG):
             print('aceptado debug\t')
            
         else:
             print('rechazado debug')
-            example(dfaDEBG)
-            declaracionDFA().read_input(dfaDEBG)
             
         if declaracionDFA().accepts_input(dfaALLW):
             print('aceptado allowed hosts\t')
           
         else:
             print('rechazado allowed hosts')
-            example(dfaALLW)
-            declaracionDFA().read_input(dfaALLW)
             
         if declaracionDFA().accepts_input(dfaLANG):
             print('aceptado language code\t')     
         else:
             print('rechazado language code')
-            example(dfaLANG)
-            declaracionDFA().read_input(dfaLANG)
             
         if declaracionDFA().accepts_input(dfaSTC):
             print('aceptado url variable static\t')
            
         else:
             print('rechazado url variable static')
-            example(dfaSTC)
-            declaracionDFA().read_input(dfaSTC)
             
         if declaracionDFA().accepts_input(dfaMED):
             print('aceptado url variable media\t')
            
         else:
             print('rechazado url variable media')
-            example(dfaMED)
-            declaracionDFA().read_input(dfaMED)
         return dfaINS, dfaDATA, dfaALLW, dfaDEBG, dfaSTC, dfaMED, dfaLANG
         
 def main():

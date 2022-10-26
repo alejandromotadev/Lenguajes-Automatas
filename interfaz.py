@@ -13,7 +13,7 @@ def abrir_archivo():
     file = filedialog.askopenfilename(
         title="Abrir", initialdir="./", filetypes=(("Archivos .txt", "*.txt"), ("Archivos .py", "*.py")))
     if file is None:
-        return
+        return 
     fileDFA = leerAutomota(file)
     name = nombreArchivo.get()
     ins = fileDFA[0].split(',')
