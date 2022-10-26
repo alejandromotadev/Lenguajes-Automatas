@@ -1,6 +1,5 @@
 from automata.fa.dfa import DFA
 import string
-from visual_automata.fa.dfa import VisualDFA
 
 num_states = 201
 statesaH = []
@@ -75,21 +74,21 @@ def declaracionDFA():
             'q36': {' ': 'q36', "'": 'q37'},
             'q37': {':': 'q38'},
             'q38': {' ': 'q38', "'": 'q39'},
-            'q39': dict({'.': 'q39', "'": 'q82'}, **createDict(low_alphabet, 'q39')),
+            'q39': dict({'.': 'q39', "'": 'q82',  '0': 'q39', '1': 'q39', '2': 'q39', '3': 'q39', '4': 'q39', '5': 'q39', '6': 'q39', '7': 'q39', '8': 'q39', '9': 'q39'}, **createDict(low_alphabet, 'q39')),
             'q40': {'A': 'q41'},
             'q41': {'M': 'q42'},
             'q42': {'E': 'q43'},
             'q43': {' ': 'q43', "'": 'q44'},
             'q44': {':': 'q45'},
             'q45': {' ': 'q45', "'": 'q46'},
-            'q46': dict({"'": 'q82'}, **createDict(alphabet, 'q46')),
+            'q46': dict({"'": 'q82', '.': 'q46','-':'q46','_':'q46', '0': 'q46', '1': 'q46', '2': 'q46', '3': 'q46', '4': 'q46', '5': 'q46', '6': 'q46', '7': 'q46', '8': 'q46', '9': 'q46'}, **createDict(alphabet, 'q46')),
             'q47': {'S': 'q48'},
             'q48': {'E': 'q49'},
             'q49': {'R': 'q50'},
             'q50': {' ': 'q50', "'": 'q51'},
             'q51': {':': 'q52'},
             'q52': {' ': 'q52', "'": 'q53'},
-            'q53': dict({"'": 'q82'}, **createDict(symbols[2:len(symbols)+1]+alphabet, 'q53')),
+            'q53': dict({"'": 'q82', }, **createDict(symbols[2:len(symbols)+1]+alphabet, 'q53')),
             'q54': {'A': 'q55', 'O': 'q65'},
             'q55': {'S': 'q56'},
             'q56': {'S': 'q57'},
@@ -196,10 +195,10 @@ def declaracionDFA():
             'q157': {'D': 'q158'},
             'q158': {'I': 'q159'},
             'q159': {'R': 'q160'},
-            'q160': {"'": 'q161'},
-            'q161': {' ': 'q161', "'": 'q162'},
-            'q162': dict({'/': 'q162', "'": 'q163'}, **createDict(alphabet, 'q162')),
-            'q163': {'}': 'q0'},
+            'q160': {',': 'q160', ' ': 'q160', "'": 'q161'},
+            'q161': dict({' ': 'q161'}, **createDict(symbols[2:len(symbols)+1]+alphabet,'q162')),
+            'q162': dict({'/': 'q162', "'": 'q163'}, **createDict(symbols[2:len(symbols)+1]+alphabet, 'q162')),
+            'q163': {')': 'q0'},
             'q164': {'L': 'q165'},
             'q165': {'L': 'q166'},
             'q166': {'O': 'q167'},
@@ -214,7 +213,7 @@ def declaracionDFA():
             'q175': {'S': 'q176'},
             'q176': {' ': 'q176', '=': 'q177'},
             'q177': {' ': 'q177', '[': 'q178'},
-            'q178': {' ': 'q178', "'": 'q179', ']': 'q10'},
+            'q178': {' ': 'q178', "'": 'q179', ']': 'q0'},
             'q179': dict({'*': 'q195', '0': 'q193', '1': 'q193', '2': 'q193', '3': 'q193', '4': 'q193', '5': 'q193', '6': 'q193', '7': 'q193', '8': 'q193', '9': 'q193'}, **createDict(alphabet, 'q180')),
             'q180': {'.': 'q191'},
             'q191': dict({'.': 'q191', "'": 'q192'}, **createDict(alphabet, 'q191')),
@@ -229,7 +228,7 @@ def declaracionDFA():
     )
     return dfaA
 
-def example(data):
+def example(value):
     dfa = declaracionDFA()
-    return dfa.read_input_stepwise(data)
+    return dfa.read_input_stepwise(value)
 

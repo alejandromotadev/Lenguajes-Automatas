@@ -13,7 +13,7 @@ ALLOWED_HOSTS = []
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'devdb',
+        'NAME': 'devdb1',
         'USER': 'user001',
         'PASSWORD': '123456789',
         'HOST': 'localhost',

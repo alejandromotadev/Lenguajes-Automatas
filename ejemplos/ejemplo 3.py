@@ -83,7 +83,7 @@ DATABASES = {
         'PASSWORD': '123456789',
         'HOST': 'meme.me',
         'PORT': '5432'
-    }
+    },
 }
 
 
